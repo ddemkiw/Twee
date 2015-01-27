@@ -13,10 +13,14 @@ describe 'Twitter_API'  do
   #   expect(twitter.trending.length).to eq(5)    
   # end
 
-  it 'should return tweets for the first trend' do
-    twitter.get_trends
-    twitter.get_tweets(twitter.trending[0], twitter.first_trend)
-    expect(twitter.first_trend).not_to be_empty
+  # it 'should return tweets for the first trend' do
+  #   twitter.get_trends
+  #   twitter.get_tweets(twitter.trending[0], twitter.first_trend)
+  #   expect(twitter.first_trend).not_to be_empty
+  # end
+
+  it '' do
+    
   end
   
 end

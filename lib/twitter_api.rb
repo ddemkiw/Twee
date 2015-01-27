@@ -22,14 +22,14 @@ class Twitter_API
   def get_trends
     trends = client.trends.take(5)
     trends.each do |trend|
-      trending << trend.name
+      trending << trend.name + " -rt"
     end
   end 
 
   def get_tweets(trend, tweet_array)
     tweets = client.search(trend, lang: "en").take(5)
     tweets.each do |tweet|
-      tweet_array << tweet.text
+    tweet_array << tweet.text
     end
   end
 
