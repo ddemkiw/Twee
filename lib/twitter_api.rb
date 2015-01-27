@@ -2,10 +2,11 @@ require 'twitter'
 
 class Twitter_API
 
-  attr_reader :client 
+  attr_reader :client, :trending
 
   def initialize
     @client = create_client
+    @trending = []
   end
 
   def create_client
@@ -15,6 +16,13 @@ class Twitter_API
       config.access_token = ENV['TWITTER_ACCESS_TOKEN']
       config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
     end
-  end  
+  end
+
+  def get_trends
+    trends = client.trends.take(5)
+    trends.each do |trend|
+      trending << trend.name
+    end
+  end 
 
 end 
