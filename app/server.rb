@@ -8,14 +8,20 @@ class Twee < Sinatra::Base
   get '/' do
     TWITTER.get_trends(5)
     fill_up_tweets
-    @tweets = TWITTER.trending_tweets
+    @trends = TWITTER.trending
+    @tweets = []
+    i = 0
+    5.times do
+      @tweets << TWITTER.return_and_remove(TWITTER.trending_tweets[i])
+      i += 1
+    end
     erb :index
   end
 
   def fill_up_tweets
     TWITTER.get_trends(5)
     TWITTER.trending.each_with_index do |trend, index|
-      TWITTER.get_tweets(TWITTER.trending[index])
+    TWITTER.get_tweets(TWITTER.trending[index])
     end
   end
 

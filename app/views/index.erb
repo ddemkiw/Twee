@@ -1,6 +1,12 @@
 <h1>Tweets:</h1>
 
 <ul>
+  <% @trends.each do |trend| %>
+  <li><%= trend %></li>
+  <% end %>
+</ul>
+
+<ul>
 <% @tweets.each do |tweet| %>
   <li><%= tweet %></li>
 <% end %>
