@@ -4,23 +4,27 @@ describe 'Twitter_API'  do
 
   let(:twitter) {Twitter_API.new}
 
-  # it 'can connect to twitter through an API' do 
-  #   expect(twitter.client.user("makersacademy")).not_to eq(nil)
-  # end
+  it 'can connect to twitter through an API' do 
+    expect(twitter.client.user("makersacademy")).not_to eq(nil)
+  end
 
-  # it 'should return top five trends from twitter' do
-  #   twitter.get_trends
-  #   expect(twitter.trending.length).to eq(5)    
-  # end
+  it 'should return top five trends from twitter' do
+    twitter.get_trends
+    expect(twitter.trending.length).to eq(5)    
+  end
 
-  # it 'should return tweets for the first trend' do
-  #   twitter.get_trends
-  #   twitter.get_tweets(twitter.trending[0], twitter.first_trend)
-  #   expect(twitter.first_trend).not_to be_empty
-  # end
+  it 'should return tweets for the first trend' do
+    twitter.get_trends
+    twitter.get_tweets(twitter.trending[0])
+    expect(twitter.trending_tweets[0]).not_to be_empty
+  end
 
-  it '' do
-    
+  it 'should be able to remove & return item from the array' do
+    twitter.get_trends
+    twitter.get_tweets(twitter.trending[0])
+    expect(twitter.trending_tweets[0].length).to eq(5)
+    twitter.return_and_remove(twitter.trending_tweets[0])
+    expect(twitter.trending_tweets[0].length).to eq(4)
   end
   
 end

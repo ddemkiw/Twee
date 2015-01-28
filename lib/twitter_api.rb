@@ -2,12 +2,13 @@ require 'twitter'
 
 class Twitter_API
 
-  attr_reader :client, :trending, :first_trend
+  attr_reader :client, :trending, :trending_tweets
 
   def initialize
     @client = create_client
     @trending = []
-    @first_trend = []
+    @trending_tweets = []
+    @number_of_tweets = 5
   end
 
   def create_client
@@ -20,17 +21,25 @@ class Twitter_API
   end
 
   def get_trends
-    trends = client.trends.take(5)
+    trends = client.trends.take(@number_of_tweets)
     trends.each do |trend|
       trending << trend.name + " -rt"
     end
   end 
 
-  def get_tweets(trend, tweet_array)
-    tweets = client.search(trend, lang: "en").take(5)
+  def get_tweets(trend)
+    current_tweets = []
+    tweets = client.search(trend, lang: "en").take(@number_of_tweets)
     tweets.each do |tweet|
-    tweet_array << tweet.text
+      current_tweets << tweet.text
     end
+    trending_tweets << current_tweets
   end
+
+  def return_and_remove(tweet_array)
+    tweet_array.shift
+  end 
+
+
 
 end 
