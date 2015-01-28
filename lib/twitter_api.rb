@@ -23,7 +23,7 @@ class Twitter_API
 
   def get_trends(number_of_trends)
     trending.clear
-    trends = client.trends.take(number_of_trends)
+    trends = client.trends(id=44418).take(number_of_trends)
     trends.each do |trend|
       trending << trend.name + " -rt"
     end

@@ -1,4 +1,4 @@
-require 'twitter_api'
+require 'twitter_api'quit
 
 describe 'Twitter_API'  do 
 
