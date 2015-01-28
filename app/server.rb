@@ -1,8 +1,22 @@
 require 'sinatra/base'
+require_relative '../lib/twitter_api.rb'
 
 class Twee < Sinatra::Base
+
+  TWITTER = Twitter_API.new
+  
   get '/' do
-    'Hello Twee!'
+    TWITTER.get_trends(5)
+    fill_up_tweets
+    @tweets = TWITTER.trending_tweets
+    erb :index
+  end
+
+  def fill_up_tweets
+    TWITTER.get_trends(5)
+    TWITTER.trending.each_with_index do |trend, index|
+      TWITTER.get_tweets(TWITTER.trending[index])
+    end
   end
 
   # start the server if ruby file executed directly

@@ -5,4 +5,5 @@ gem 'twitter'
 gem 'rspec'
 gem 'shotgun'
 gem 'capybara'
+gem 'sinatra'
 
