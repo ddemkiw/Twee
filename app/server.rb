@@ -9,12 +9,7 @@ class Twee < Sinatra::Base
     TWITTER.get_trends(5)
     fill_up_tweets
     @trends = TWITTER.trending
-    @tweets = []
-    i = 0
-    5.times do
-      @tweets << TWITTER.return_and_remove(TWITTER.trending_tweets[i])
-      i += 1
-    end
+    @tweets = TWITTER.trending_tweets
     erb :index
   end
 

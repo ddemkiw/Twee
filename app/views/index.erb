@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
 <h1>Tweets:</h1>
 
 <ul>
@@ -7,7 +13,25 @@
 </ul>
 
 <ul>
-<% @tweets.each do |tweet| %>
-  <li><%= tweet %></li>
+<% @tweets.each do |trend| %>
+  <% trend.each do |tweet|  %>
+  <li class="tweet"><%= tweet %> </li>
+  <%end%>
 <% end %>
 </ul>
+
+<script>
+ var tweets = document.getElementsByClassName("tweet");
+  var worte;
+  var tweet;
+  for(var i in tweets){
+    tweet = tweets[i].innerHTML.replace(/http:\/\/[^\/]+\/[^\s]+/,'');
+    worte = new SpeechSynthesisUtterance(tweet);
+    worte.lang = "en-UK";
+    window.speechSynthesis.speak(worte);
+  }
+  </script>
+
+</body>
+</html>
+
