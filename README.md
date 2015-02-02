@@ -1,18 +1,28 @@
-Title
+Twee
 =======================
 
 ## Synopsis
 
-TODO: Enter a description of your project here.
+This is an mvp of a larger idea that explores the rate of information dissemination through the use of social media. 
 
-![NAME_OF_IMAGE](http://ENTER_URL)
+The idea is to build our own tower of Babel using real time information from the twitter API. 
+
+In it's current instantiation, our app can pull tweets based on the top five trends and our browser can read those tweets using the voice api built into the browser. 
+
+We would like to expand this idea and have multiple voices reading multiple different tweets simultaneously, in different languages. 
+
+![alt tag](https://github.com/ddemkiw/Twee/blob/master/babel.jpg)
 
 ## Technologies Used
 
-- LANGUAGE_ONE
-- LANGUAGE_TWO
-- FRAMEWORK
+- Sinatra
+- Ruby
+- Javascript
+- html
+- css
 - TESTING SUITES
+  -rspec
+  -jasmin
 
 ## Job List
 
@@ -21,16 +31,14 @@ TODO: Enter a description of your project here.
 - [ ]
 - [ ]
 
-## Favourite Code Snippet
 
-~~~
  TODO: paste code here
 ~~~
 
 ## Collaborators
 
-- NAME_ONE (http://www.github.com/USERNAME)
-- NAME_TWO (http://www.github.com/USERNAME)
+- Josh Bebbington (https://github.com/bebbs)
+- Luke Clewlow (https://github.com/lukeclewlow)
 
 ## Still to complete/refactor
 
