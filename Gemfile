@@ -6,4 +6,5 @@ gem 'rspec'
 gem 'shotgun'
 gem 'capybara'
 gem 'sinatra'
+gem 'create-awesome-readme'
 
