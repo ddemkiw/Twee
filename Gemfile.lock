@@ -9,6 +9,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    create_awesome_readme (0.0.5)
     diff-lcs (1.2.5)
     equalizer (0.0.9)
     faraday (0.9.1)
@@ -70,6 +71,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  create_awesome_readme
   rspec
   shotgun
   sinatra
